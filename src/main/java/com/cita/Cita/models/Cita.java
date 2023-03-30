@@ -2,6 +2,8 @@ package com.cita.Cita.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 //JPA
@@ -20,10 +22,10 @@ public class Cita {
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "FECHA_HORA", nullable = false)
+    @Column(name = "FECHA_HORA")
     private Date fechaHora;
 
-    @Column(name = "MOTIVOCITA", nullable = false)
+    @Column(name = "MOTIVOCITA")
     private String motivoCita;
 
     @ManyToOne

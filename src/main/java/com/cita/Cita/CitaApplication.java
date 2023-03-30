@@ -21,22 +21,4 @@ public class CitaApplication {
 		SpringApplication.run(CitaApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner commandLineRunner(CitaRepository citaRepository,
-										DiagnosticoRepository diagnosticoRepository,
-										PacienteRepository pacienteRepository,
-										UsuarioRepository usuarioRepository){
-		return args -> {
-			Cita cita = new Cita();
-			cita.setFechaHora(Date.now());
-			cita.setMotivoCita("Revisión");
-			Diagnostico diagnostico = new Diagnostico();
-			diagnostico.setValoracionEspecialista("Agudo");
-			diagnostico.setEnfermedad("Lesión rodilla");
-			cita.setDiagnostico(diagnostico);
-			citaRepository.save(cita);
-			diagnosticoRepository.save(diagnostico);
-		}
-	}
-
 }

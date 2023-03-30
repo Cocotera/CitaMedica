@@ -84,8 +84,9 @@ public class PacienteService implements PacienteServiceMet{
         for(Medico m: pacientenew.getMedicos()){
             medicoRep.save(m);
         }
-        for(Cita c: pacientenew.getCitas()){
+        for(Cita c: pacientenew.getCitas()) {
             citarep.save(c);
+            System.out.println(c.getMotivoCita());
         }
         pacienteRep.save(pacientenew);
         return convertirDTO(pacientenew);
